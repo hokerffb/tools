@@ -3,7 +3,7 @@
 #
 # Copyright 2012 Toyshop Studio
 # All Rights Reserved.
-# Author: YuWei Peng <pengyuwei@gmail.com>
+# Author: Peng YuWei <pengyuwei@gmail.com>
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -20,20 +20,20 @@
 import sys
 import time
 import os
-    
-    
+
+
 def show_path(m):
     try:
         print __import__(m).__file__
     except:
         print "not found."
-    
+
 def main():
     if len(sys.argv) == 2:
         moudle = sys.argv[1]
         show_path(moudle)
     else:
         print "where <python-moudle name>"
-    
+
 if __name__ == '__main__':
     main()
