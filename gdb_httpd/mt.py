@@ -4,8 +4,7 @@ import os
 
 def thread_main(index):
     global count, mutex
-    threadname = threading.currentThread().getName()
-    threadname += "_"
+    threadname = ""
     threadname += str(threading.currentThread().__hash__())
     cmd = "sh debug_httpd.sh " + str(index) + " > logs/" + threadname
     print cmd
@@ -26,7 +25,6 @@ def main(num):
  
     count = 1
     mutex = threading.Lock()
-    os.system("rm -f logs/*")
 
     for x in xrange(1, num + 1):
         threads.append(threading.Thread(target=thread_main, args=(x,)))
