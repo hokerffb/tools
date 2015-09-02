@@ -3,6 +3,11 @@ Tools
 
 My best tools for working
 
+Install:
+
+```
+sudo ./install.sh
+```
 
 # Command
 
@@ -24,11 +29,6 @@ $ where <python-moudle-name>
 
 Highlight the word in grep's output
 
-# Install
-
-```
-sudo ./install.sh
-```
 
 # Example
 
