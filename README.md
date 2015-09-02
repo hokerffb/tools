@@ -4,20 +4,32 @@ tools
 Best tools for working
 
 
-[where]
+# Tools
 
-install:
-sudo cp ./where.py /usr/bin/where
-sudo chmod +x /usr/bin/where
+## fdp
 
-use:
+Format 'docker ps' output
+
+## where
+
+Look if the python moudle exist
+
+usage:
 $ where <python-moudle-name> 
 
-[ref]
+## ref
 
-install:
-sudo cp ./ref.py /usr/bin/ref
-sudo chmod +x /usr/bin/ref
+Highlight the word in grep's output
 
-use:
+# Install
+
+```
+sudo ./install.sh
+```
+
+# Example
+
+```
 $ grep -rnE "\.get_all\(" *|ref 5 5 "get_all"
+$ docker ps|fdp
+```

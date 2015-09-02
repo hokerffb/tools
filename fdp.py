@@ -18,7 +18,6 @@
 #    under the License.
 
 import sys
-import re
 
 def main():
     col = []
