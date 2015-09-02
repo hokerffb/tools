@@ -18,47 +18,30 @@
 #    under the License.
 
 import sys
-import linecache
 import re
-
-OLOR_RED = "\033[1;31m"
-COLOR_NONE = "\033[0m"
-COLOR_RED = "\033[0;31m"
-COLOR_GREEN = "\033[0;32m"
-COLOR_BLUE = "\033[0;34m"
-COLOR_YELLOW = "\033[1;33m"
-COLOR_LIGHT_GREEN = "\033[1;32m"
-COLOR_LIGHT_GRAY = "\033[0;37m"
-COLOR_DARK_GRAY = "\033[1;30m"
-
-
-def hlkey(string, key=None):
-    #ret = string.replace(".", COLOR_LIGHT_GRAY + "." + COLOR_NONE)
-    if not key is None:
-        ret = string.replace(key, COLOR_RED + key + COLOR_NONE)
-    else:
-        ret = COLOR_RED + string + COLOR_NONE
-    return ret
-
 
 def main():
     col = []
     count = 0
+    cols = ["CONTAINER ID", "IMAGE", "COMMAND", "CREATED", "STATUS", "PORTS", "NAMES"]
+    cols_index = []
     while True:
         pipline = sys.stdin.readline()
         if pipline is None or len(pipline) == 0:
             break
-        print
-        s = re.split('\t|  |   |    |     |      |        ', pipline)
-        s1 = [item for item in s if item] 
         if count == 0:
-            col = s1
+            # parse column
+            for i in range(0, len(cols)):
+                cols_index.append(pipline.find(cols[i]))
+            print cols_index
         else:
-            i = 0
-            print s1
-            for iter in s1:
-                print "%d. %s: %s" % (i+1, col[i], s1[i])
-                i += 1
+            # parse output
+            print "%d.%s" % (count, "-" * 60)
+            for i in range(0, len(cols)):
+                if i + 1 == len(cols):
+                    print "%s: %s" % (cols[i], pipline[cols_index[i] : ])
+                else:
+                    print "%s: %s" % (cols[i], pipline[cols_index[i] : cols_index[i + 1]])
         count += 1
     
 
