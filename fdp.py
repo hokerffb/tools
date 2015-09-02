@@ -33,7 +33,6 @@ def main():
             # parse column
             for i in range(0, len(cols)):
                 cols_index.append(pipline.find(cols[i]))
-            print cols_index
         else:
             # parse output
             print "%d.%s" % (count, "-" * 60)
