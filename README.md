@@ -1,10 +1,10 @@
-tools
+Tools
 =====
 
-Best tools for working
+My best tools for working
 
 
-# Tools
+# Command
 
 ## fdp
 
@@ -15,7 +15,10 @@ Format 'docker ps' output
 Look if the python moudle exist
 
 usage:
+
+```
 $ where <python-moudle-name> 
+```
 
 ## ref
 
@@ -32,4 +35,5 @@ sudo ./install.sh
 ```
 $ grep -rnE "\.get_all\(" *|ref 5 5 "get_all"
 $ docker ps|fdp
+$ where pygame
 ```
