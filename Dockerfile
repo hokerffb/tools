@@ -1,7 +1,7 @@
-FROM tenxcloud/centos
+FROM index.tenxcloud.com/tenxcloud/centos
 MAINTAINER 0xff "pengyuwei@gmail.com"
 
-RUN echo "Hello, I will test this cloud."
+RUN echo "Hello, docker."
 # Expose the container port
 EXPOSE 80
 
