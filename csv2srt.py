@@ -10,8 +10,13 @@ import csv
 # 00:02:52,184 --> 00:02:53,617
 # 慢慢来
 
+# python ~/Documents/tools/csv2srt.py 课程内容
+# input:  课程内容.csv
+# output: 课程内容.srt
+
 def main(src_file):
     dst_file = src_file + ".srt"
+    src_file = src_file + ".csv"
 
     csvFileR = open(src_file, "r")
     reader = csv.reader(csvFileR)
