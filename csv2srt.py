@@ -31,7 +31,6 @@ def main(src_file):
 
         m, s = divmod(start, 60)
         h, m = divmod(m, 60)
-        print("%d:%02d:%02d" % (h, m, s))
         strtime = "%d:%02d:%02d" % (h, m, s)
         strtime += ",000 --> "
         m, s = divmod(keep+start, 60)
@@ -39,6 +38,7 @@ def main(src_file):
         strtime += "%d:%02d:%02d" % (h, m, s)
         strtime += ",000"
 
+        print "%d %s %s" % (i, strtime, content)
         writer.write(str(i) + "\n")
         writer.write(strtime + "\n")
         writer.write(content + "\n\n")
