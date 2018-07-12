@@ -28,6 +28,9 @@ def main(src_file):
         start = int(item[0])
         keep = int(item[1])
         content = item[2]
+        nick = ""
+        if len(item) > 3:
+            nick = item[3]
 
         m, s = divmod(start, 60)
         h, m = divmod(m, 60)
@@ -41,7 +44,10 @@ def main(src_file):
         print "%d %s %s" % (i, strtime, content)
         writer.write(str(i) + "\n")
         writer.write(strtime + "\n")
-        writer.write(content + "\n\n")
+        if len(nick)==0 or nick == "——":
+            writer.write("%s\n\n" % (content))
+        else:
+            writer.write("%s:%s\n\n" % (nick, content))
 
     writer.close()
     csvFileR.close()
