@@ -29,6 +29,9 @@ $ where <python-moudle-name>
 
 帮助在grep的结果中高亮出指定的关键词
 
+# csv2srt
+
+做视频字幕的时候，可以首先用Excel进行编辑修改，然后通过这个工具快速的把csv转换成srt字幕格式
 
 # Example
 
@@ -38,6 +41,4 @@ $ docker ps|fdp
 $ where pygame
 ```
 
-# csv2srt
 
-做视频字幕的时候，可以首先用Excel进行编辑修改，然后通过这个工具快速的把csv转换成srt字幕格式
