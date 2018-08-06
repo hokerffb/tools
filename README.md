@@ -1,8 +1,12 @@
 
 # codeproxy
 
-codeproxy.py run into server
-upload,py to upload code
+一个简单的在服务器执行命令或者脚本的小工具
+
+在服务器上执行：codeproxy.py
+
+在本地执行：upload.py
+
 
 
 ## usage
