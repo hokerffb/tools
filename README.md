@@ -1,14 +1,23 @@
-codeproxy
-=========
+
+# codeproxy
+
 codeproxy.py run into server
 upload,py to upload code
 
-usage:
+
+## usage
+
+```
     upload                  - run run.sh in server
     upload -c "command"     - execute command in server and get return value
     upload "shell"          - run shell script in server and get output
+```
 
-example:
+
+## example
+
+
+```
 $ ./upload.py "df -h"
 $ df -h
 Filesystem            Size  Used Avail Use% Mounted on
@@ -21,3 +30,4 @@ none                  2.0G  4.0M  2.0G   1% /run/shm
 
 $ ./upload.py
 run pre.sh in client,run run.sh in server
+```
