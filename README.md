@@ -44,3 +44,6 @@ $ grep -rnE "\.get_all\(" *|ref 5 5 "get_all"
 
 做视频字幕的时候，可以首先用Excel进行编辑修改，然后通过这个工具快速的把csv转换成srt字幕格式
 
+# scan
+
+扫描家庭网络中的设备IP地址
