@@ -1,5 +1,7 @@
 *.py[co]
 *.swp
+output
+data
 
 # Packages
 *.egg
