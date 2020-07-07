@@ -2,6 +2,7 @@
 *.swp
 output
 data
+.idea
 *.sh
 
 # Packages
