@@ -16,6 +16,7 @@ def main(url_list_file):
             tsname = str(i) + '.ts'
             cmd = 'wget "' + url + '" -O ' + tsname
             os.system(cmd);
+            if i == 1:continue
             cmd = "cat " + tsname + ">>merge.ts"
             os.system(cmd);
     cmd = "ffmpeg -y -i merge.ts -c:v libx264 -c:a copy output.mp4"

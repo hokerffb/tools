@@ -1,17 +1,17 @@
 .DEFAULT_GOAL := all
 
 install : where.py ref.py fdp.py downts.py
-	cp ./where.py /usr/local/bin/wherepy
-	chmod +x /usr/local/bin/wherepy
+	@cp ./where.py /usr/local/bin/wherepy
+	@chmod +x /usr/local/bin/wherepy
 
-	cp ./ref.py /usr/local/bin/ref
-	chmod +x /usr/local/bin/ref
+	@cp ./ref.py /usr/local/bin/ref
+	@chmod +x /usr/local/bin/ref
 
-	cp ./fdp.py /usr/local/bin/fdp
-	chmod +x /usr/local/bin/fdp
+	@cp ./fdp.py /usr/local/bin/fdp
+	@chmod +x /usr/local/bin/fdp
 
-	cp ./downts.py /usr/local/bin/downts
-	chmod +x /usr/local/bin/downts
+	@cp ./downts.py /usr/local/bin/downts
+	@chmod +x /usr/local/bin/downts
 
 
 .PHONY : all
