@@ -7,5 +7,5 @@ chmod +x /usr/bin/ref
 cp ./fdp.py /usr/bin/fdp
 chmod +x /usr/bin/fdp
 
-echo 'where <python-moudle>'
-echo 'grep -rn "keyword" *|ref 5 5'
+cp ./downts.py /usr/bin/downts
+chmod +x /usr/bin/downts

@@ -3,10 +3,13 @@ Tools
 
 平时工作中会用到的一些工具性的代码
 
-Install:
+安装和卸载:
 
 ```
-sudo ./install.sh
+# Install
+sudo make install
+# Uninstall
+sudo make clean
 ```
 
 # Command
@@ -47,3 +50,7 @@ $ grep -rnE "\.get_all\(" *|ref 5 5 "get_all"
 # scan
 
 扫描家庭网络中的设备IP地址
+
+# downts
+
+下载指定文件中的全部ts分片文件，并顺序编号后，合成一个mp4文件
