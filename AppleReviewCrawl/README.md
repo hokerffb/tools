@@ -8,7 +8,7 @@ arcgo -id <appid>
 
 
 
-## 协议分析
+## 协议
 
 评论抓取地址：
 
@@ -24,6 +24,6 @@ feed
     |__entry: [{author/name/label:"名字",title/label:"标题",content/label:"评论内容"}]
 ```
 
-* link：用于索引页面，如果数据未空，则没有entry字段
+* link：用于索引页面，如果数据为空，则没有entry字段
 * entry：评论内容
 * updated：rss的更新时间，用于判断是否需要抓取
