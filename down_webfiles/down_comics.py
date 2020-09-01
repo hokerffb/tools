@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 def http_get(url):
     headers = {
-        'host': 'booksdl.org',
+        'host': 'XXX.org',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -54,5 +54,5 @@ def webfile_list(url, downdir):
 
 
 if __name__ == '__main__':
-    url = "http://booksdl.org/comics0/_COMICS_MAGAZINES/"
+    url = "http://XXX.XXX/comics0/_COMICS_MAGAZINES/"
     webfile_list(url, 'down/')
