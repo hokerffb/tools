@@ -3,6 +3,7 @@
 #coding=utf8
 
 import sys
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -28,20 +29,30 @@ def http_get(url):
     return r.content
 
 
-def webfile_list(nickname):
+def webfile_list(url, downdir):
     html = http_get(url)
 
     soup = BeautifulSoup(html, "html.parser")
     for child in soup.find_all('a'):
         if child['href'] == '../':
-            print "../ <Pass>"
+            #print "../ <Pass>"
+            pass
         elif child.text[-1:] == '/':
-            print child.text.encode('utf8'), "<Dir>"
+            #print child['href'], "<Dir>"
+            # 递归
+            #os.system('mkdir -p ' + downdir + child['href'])
+            webfile_list(url + child['href'], downdir + child['href'])
         else:
-            print child.text.encode('utf8'), "<File>" 
+            print url + child['href']
+            # 下面代码因为涉及文件名中的特殊字符和目录转换问题，
+            # 不如直接用下载工具下载上面打印出来的链接更省事
+            #print child.text.encode('utf8'), "<File>" 
+            # 下载文件
+            #cmd = 'wget ' + url + child['href'] + ' -O "' + downdir + child.text + '"'
+            #print cmd
+            #os.system(cmd)
 
 
 if __name__ == '__main__':
-    sys.setdefaultencoding('utf8')
     url = "http://booksdl.org/comics0/_COMICS_MAGAZINES/"
-    webfile_list(url)
+    webfile_list(url, 'down/')
