@@ -37,10 +37,13 @@ def get_blog_list(nickname, page):
 def get_detail(url):
     html = http_get(url)
     soup = BeautifulSoup(html, "html.parser")
-    title = soup.h1.string
-    article = soup.article.text
-    # TODO:获取日期时间
-    return title + article
+    title = soup.h1.string.encode('utf-8').strip()
+    article = soup.article.text.encode('utf-8').strip()
+    create_time = ""
+    for child in soup.find_all('span', class_='time'):
+        if len(child.text) == 19:
+                create_time = child.text.strip()
+    return title, create_time, article
 
 
 def blog_list(nickname):
@@ -55,11 +58,15 @@ def blog_list(nickname):
             # <div class="article-item-box csdn-tracking-statistics" data-articleid="84575961">
             if child.has_attr('data-articleid'):
                 url = "https://blog.csdn.net/ffb/article/details/" + child['data-articleid']
-                print url
-                blog = get_detail(url)
+                title, create_time, blog = get_detail(url)
+                print "# " + title
+                print "\n" + create_time + "\n"
+                print "```"
                 print blog
-        break
+                print "```"
+                print 
 
+        # TODO: how to break?
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
