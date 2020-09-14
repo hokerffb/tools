@@ -9,7 +9,7 @@ Overview
 # Install
 sudo make install
 # Uninstall
-sudo make clean
+sudo make uninstall
 ```
 
 # Tools

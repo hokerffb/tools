@@ -9,9 +9,11 @@ base : cax.c ai.c
 
 install: cax.out
 	@cp -f cax.out /usr/local/bin/cax
+	@cp -f ai.out /usr/local/bin/ai
 
 uninstall:
 	@rm -f /usr/local/bin/cax
+	@rm -f /usr/local/bin/ai
 	
 .PHONY : all
 all : base

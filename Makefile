@@ -17,7 +17,7 @@ install : where.py ref.py fdp.py downts.py
 .PHONY : all
 all : install
 
-clean:
+uninstall:
 	@rm -f /usr/local/bin/wherepy
 	@rm -f /usr/local/bin/ref
 	@rm -f /usr/local/bin/fdp
