@@ -18,6 +18,12 @@ sudo make uninstall
 AppleReviewCrawl：苹果应用商店评论抓取工具，用法:
 arcgo <appid> > xxx.txt
 
+ssh-test-tool: 
+A multithreading performance test tool for ssh/scp
+多线程的ssh性能测试工具，主要用于对ssh服务器的性能测试。
+可以自动以指定线程数连接ssh服务器并执行设定的命令序列，
+可以监控期间产生了多少流
+
 csdn2md：CSDN博客抓取并转换为Markdown工具，用法：
 python csdn2md.py nickname
 
@@ -25,6 +31,10 @@ ezviz2kml：萤石云EZVIZ行车记录仪的轨迹txt文件转换为Google Earth
 ```
 
 # Command
+
+ai：获取自动增加的数字，方便批量下载小电影使用；
+
+cax：16进制查看文件内容；
 
 csv2srt：做视频字幕的时候，可以首先用Excel进行编辑修改，然后通过这个工具快速的把csv转换成srt字幕格式
 

@@ -1,0 +1,38 @@
+# ssh test tool configuration file 0.07
+
+#bh_client config
+server_ip=127.0.0.1
+server_port=40000
+bhclient_count=1
+bhclient_flow=10
+
+# total thread count
+thread_count=5
+
+# -1 = randomize delay of each thread start(0-60 seconds)
+thread_delay=1
+
+# loop start thread count, 0:loop forever
+thread_loop_count=1
+
+# loop run command's count, 0:loop forever
+loop_count=2
+
+# start scp test with scp param
+scp_cmd=scp ./user.bmp root@192.168.27.169:~/
+scp_pwd=<password>
+
+# start ssh test without param
+ssh_cmd=ssh pyw@192.168.29.147
+ssh_pwd=<password>
+prompt=\]\$
+# for keep connection test(small interactive data)
+cmd_delay=2
+
+# ssh autorun commands
+cmd=pwd
+cmd=sleep 5
+cmd=touch ~/1
+cmd=ls
+
+
