@@ -1,3 +1,11 @@
+# 总览
+
+CSDN博客抓取并转换为Markdown工具，用法：
+
+```
+python csdn2md.py nickname
+```
+
 # 步骤
 
 1. 循环获取分页列表

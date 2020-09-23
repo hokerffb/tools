@@ -5,14 +5,16 @@
 import os
 import csv
 
+# csv format：
+# TODO：待补充
 # srt format:
 # 45
 # 00:02:52,184 --> 00:02:53,617
 # 慢慢来
 
-# python ~/Documents/tools/csv2srt.py 课程内容
-# input:  课程内容.csv
-# output: 课程内容.srt
+# python ~/Documents/tools/csv2srt.py 字幕内容
+# input:  字幕内容.csv
+# output: 字幕内容.srt
 
 def main(src_file):
     dst_file = src_file + ".srt"

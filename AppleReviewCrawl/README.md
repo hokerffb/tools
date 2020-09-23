@@ -4,6 +4,7 @@
 
 ```
 arcgo -id <appid>
+arcgo <appid> > xxx.txt
 ```
 
 

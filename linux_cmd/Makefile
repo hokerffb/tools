@@ -10,10 +10,23 @@ base : cax.c ai.c
 install: cax.out
 	@cp -f cax.out /usr/local/bin/cax
 	@cp -f ai.out /usr/local/bin/ai
+	@cp -f ./where.py /usr/bin/where
+	@chmod +x /usr/bin/where
+	@cp -f ./ref.py /usr/bin/ref
+	@chmod +x /usr/bin/ref
+	@cp -f ./fdp.py /usr/bin/fdp
+	@chmod +x /usr/bin/fdp
+	@cp -f ./downts.py /usr/bin/downts
+	@chmod +x /usr/bin/downts
+
 
 uninstall:
 	@rm -f /usr/local/bin/cax
 	@rm -f /usr/local/bin/ai
+	@rm -f /usr/local/bin/wherepy
+	@rm -f /usr/local/bin/ref
+	@rm -f /usr/local/bin/fdp
+	@rm -f /usr/local/bin/downts
 	
 .PHONY : all
 all : base
