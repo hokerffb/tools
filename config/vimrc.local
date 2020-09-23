@@ -1,0 +1,75 @@
+set hlsearch
+set number
+syntax on
+set autoindent
+set cindent
+set nowrap
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set et
+set si
+set expandtab
+let Tlist_Use_Right_Window=1
+let Tlist_File_Fold_Auto_Close=1
+set ignorecase
+set incsearch
+set expandtab
+set showcmd
+set showmatch
+set modeline
+set modelines=5
+let Tlist_Use_Right_Window=1
+let Tlist_File_Fold_Auto_Close=1
+set cc=80
+
+:map <F2> <ESC>:wq %<CR>
+:map <F8> <ESC>:NERDTreeToggle <CR>
+let mapleader = ',' 
+nnoremap <C-l> gt 
+nnoremap <C-h> gT 
+nnoremap <leader>t : tabe<CR>
+
+set cursorline
+
+:map <F2> <ESC>:wq %<CR>
+:map <F8> <ESC>:NERDTreeToggle <CR>
+let mapleader = ',' 
+nnoremap <C-l> gt 
+nnoremap <C-h> gT 
+nnoremap <leader>t : tabe<CR>
+
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
+
+let mapleader = ',' 
+nnoremap <C-l> gt 
+nnoremap <C-h> gT 
+nnoremap <leader>t : tabe<CR> 
+nnoremap <leader>q : qa!<CR> 
+nnoremap <leader>p : CommandT<CR>
+nnoremap <leader>` : vsp<CR>
+nnoremap <leader>~ : sp<CR>
+nnoremap <leader>w : w<CR>
+nnoremap <leader>c : q<CR>
+
+:map <F2> <ESC>:w %<CR>
+:map <F3> <ESC>:wq %<CR>
+:map <F8> <ESC>:NERDTreeToggle <CR>
+:map <F9> <ESC>:TlistToggle<CR>
+
+cab Q q
+cab W w
+cab WQ wq
+
+hi Search term=reverse cterm=bold ctermbg=9
+hi Search term=reverse cterm=bold ctermbg=16
+hi Folded term=standout ctermfg=7 ctermbg=16
+
+" 其他：
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkred guifg=white
+
+"set cursorcolumn
+"hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
