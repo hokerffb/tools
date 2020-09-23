@@ -20,6 +20,19 @@ $ where pygame
 $ grep -rnE "\.get_all\(" *|ref 5 5 "get_all"
 ```
 
+```
+$ ai --help
+Usage:
+ai [start]|[end]
+ai start [init number] [step]
+$ ai start 0 1
+$ wget http://movie.net/1.mp4  land_`ai`.mp4
+$ wget http://movie.net/2.mp4  land_`ai`.mp4
+$ ai end
+$ ls
+land_1.mp4 land_2.mp4
+```
+
 # 安装和卸载
 
 Install: 
