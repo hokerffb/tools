@@ -1,0 +1,26 @@
+[core]
+    excludesfile = ./.gitignore
+    editor = vim
+[alias]
+    co = checkout
+    st = status
+    ci = commit
+    b = branch
+    r = remote
+    l = "log --graph"
+    up = "fetch origin master"
+    re = "rebase FETCH_HEAD"
+    lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s  %C(bold blue)(%cn %cr)%Creset'
+    ll = log --color --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %C(bold blue)(%cn %cr)%Creset' --no-merges --stat
+    tree = log --graph --decorate
+[ui]
+    color = true
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[diff]
+    #external = /home/pyw/git-meld.sh
+[user]
+	name = 0xff
+	email = pengyuwei@gmail.com
