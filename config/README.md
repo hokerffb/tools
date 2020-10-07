@@ -20,3 +20,4 @@
 |配置文件|说明|
 :-|:-|
 |markdown.css|Markdown: Styles，需要先将文件放到项目目录下或者https地址上|
+|parser.js|~/.mume，自定义markdown渲染规则|
