@@ -14,3 +14,9 @@
 |.zshrc|~/|
 |vimrc.local|/etc/|
 |proxychains.conf|/usr/local/etc/|
+
+## VSCode
+
+|配置文件|说明|
+:-|:-|
+|markdown.css|Markdown: Styles|

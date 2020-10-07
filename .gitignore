@@ -3,6 +3,7 @@
 output
 data
 .idea
+.DS_Store
 
 # Packages
 *.egg
