@@ -33,6 +33,14 @@ $ ls
 land_1.mp4 land_2.mp4
 ```
 
+```
+$ echo "http://www.example.com/readme01.ts" > down.txt
+$ echo "http://www.example.com/readme02.ts" > down.txt
+$ downts down.txt
+$ downts --remerge
+$ downts --script
+```
+
 # 安装和卸载
 
 Install: 
