@@ -4,6 +4,11 @@
 
 import os
 
+def ts2mp4():
+    cmd = "ffmpeg -y -i merge.ts -c:v libx264 -c:a copy output.mp4"
+    os.system(cmd)
+
+
 def main(url_list_file):
     tsname = ""
     os.system("rm -rf merge.ts")
@@ -18,13 +23,22 @@ def main(url_list_file):
             os.system(cmd)
             cmd = "cat " + tsname + ">>merge.ts"
             os.system(cmd);
-    cmd = "ffmpeg -y -i merge.ts -c:v libx264 -c:a copy output.mp4"
-    os.system(cmd)
+    ts2mp4()
     print "Done."
 
 
 def remerge():
-    pass
+    os.system("rm -rf merge.ts")
+    i = 0
+    while(1):
+        i = i + 1
+        tsname = str(i) + '.ts'
+        if not os.path.isfile(tsname):
+            break
+        cmd = "cat " + tsname + ">>merge.ts"
+        os.system(cmd);
+    ts2mp4()
+    print 'Done.' 
 
 
 def genscript(url_list_file):
@@ -56,13 +70,13 @@ if __name__ == "__main__":
     if len(os.sys.argv) < 2:
         show_usage()
         os.sys.exit(0)
-    if os.sys.argv[1] == '--script':
+    if os.sys.argv[1] == '--script' or os.sys.argv[1] == '-s':
         if len(os.sys.argv) < 3:
             show_usage()
             os.sys.exit(0)
         genscript(os.sys.argv[2])
         os.sys.exit(0)
-    elif os.sys.argv[1] == '--remerge':
+    elif os.sys.argv[1] == '--remerge' or os.sys.argv[1] == '-r':
         remerge()
         os.sys.exit(0)
     else:
