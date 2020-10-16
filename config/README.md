@@ -6,6 +6,7 @@
 :-|:-|
 |vimrc.local|/etc/|
 |proxychains.conf|/etc/|
+|gitconfig|~/.gitconfig|
 
 ## MacOS 10.15
 
