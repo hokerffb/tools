@@ -13,8 +13,13 @@
 |配置文件|路径|
 :-|:-|
 |.zshrc|~/|
-|vimrc.local|/etc/|
 |proxychains.conf|/usr/local/etc/|
+
+## FreeBSD 13
+
+|配置文件|路径|
+:-|:-|
+|FreeBSD13ustc.conf|/usr/local/etc/pkg/repos/FreeBSD.conf|
 
 ## VSCode
 
