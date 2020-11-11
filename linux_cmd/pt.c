@@ -2,17 +2,22 @@
 #include <time.h>
 #include <unistd.h>
 #include <signal.h>
+#include <stdlib.h>
 
 int running = 1;
 
 void OnCtrlC(int signo) 
 {
+    // user quit
     running = 0;
 }
 
 int main(int argc, char *argv[])
 {
-    const int TOTAL = 25 * 60;
+    int TOTAL = 25 * 60;
+    if (argc >= 2) {
+        TOTAL = atoi(argv[1]) * 60;
+    }
 
     time_t begin = time((time_t*)NULL);
     time_t now = 0;
@@ -24,6 +29,7 @@ int main(int argc, char *argv[])
         now = time((time_t*)NULL);
         time_t pass = now - begin;
         if (pass > TOTAL) {
+            // normal quit
             break;
         }
         time_t count = TOTAL - pass;
@@ -36,7 +42,12 @@ int main(int argc, char *argv[])
     }
 
     printf("\033[?25h"); // show cursor
+    printf("\a");
     printf("\n");
+    // MacOS: afplay end.mp3
+    if (running) {
+        system("afplay ~/Music/end.mp3 &");
+    }
 
     return 0;
 }
