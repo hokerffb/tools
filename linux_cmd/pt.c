@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
+#include <string.h>
 
 int running = 1;
 
@@ -15,8 +16,11 @@ void OnCtrlC(int signo)
 int main(int argc, char *argv[])
 {
     int TOTAL = 25 * 60;
-    if (argc >= 2) {
-        TOTAL = atoi(argv[1]) * 60;
+    printf("%d -> %s\n", argc, argv[1]);
+    if (argc > 2 && strcmp(argv[1], "-t")==0) {
+        // pt -t 1
+        printf("\t%d -> %s\n", argc, argv[2]);
+        TOTAL = atoi(argv[2]) * 60;
     }
 
     time_t begin = time((time_t*)NULL);

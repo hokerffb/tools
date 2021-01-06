@@ -1,30 +1,13 @@
 #!/usr/bin/env python
-#-*- coding: UTF-8 -*-
-#coding=utf8
+# -*- coding: UTF-8 -*-
+# coding=utf8
 
 import os
+
 
 def ts2mp4():
     cmd = "ffmpeg -y -i merge.ts -c:v libx264 -c:a copy output.mp4"
     os.system(cmd)
-
-
-def main(url_list_file):
-    tsname = ""
-    os.system("rm -rf merge.ts")
-    with open(url_list_file, 'r') as f:
-        i = 0
-        for line in f.readlines():
-            url = line.strip()
-            if url == "":continue
-            i = i + 1
-            tsname = str(i) + '.ts'
-            cmd = 'wget "' + url + '" -O ' + tsname
-            os.system(cmd)
-            cmd = "cat " + tsname + ">>merge.ts"
-            os.system(cmd);
-    ts2mp4()
-    print "Done."
 
 
 def remerge():
@@ -36,9 +19,9 @@ def remerge():
         if not os.path.isfile(tsname):
             break
         cmd = "cat " + tsname + ">>merge.ts"
-        os.system(cmd);
+        os.system(cmd)
     ts2mp4()
-    print 'Done.' 
+    print 'Done.'
 
 
 def genscript(url_list_file):
@@ -48,7 +31,8 @@ def genscript(url_list_file):
         i = 0
         for line in f.readlines():
             url = line.strip()
-            if url == "":continue
+            if url == "":
+                continue
             i = i + 1
             w.write('wget ' + url + ' -O ' + str(i) + '.ts\n')
     w.close()
@@ -61,6 +45,25 @@ def show_usage():
     print 'option:\n'
     print '\t--remerge : remerge all ts files in current directory.\n'
     print '\t--script <url_file_name>: generate download bash script file.\n'
+
+
+def main(url_list_file):
+    tsname = ""
+    os.system("rm -rf merge.ts")
+    with open(url_list_file, 'r') as f:
+        i = 0
+        for line in f.readlines():
+            url = line.strip()
+            if url == "":
+                continue
+            i = i + 1
+            tsname = str(i) + '.ts'
+            cmd = 'wget "' + url + '" -O ' + tsname
+            os.system(cmd)
+            cmd = "cat " + tsname + ">>merge.ts"
+            os.system(cmd)
+    ts2mp4()
+    print "Done."
 
 
 # downts --remerge

@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 
 CC=gcc
-CFLAGS=-Wall -g
+CFLAGS=-Wall -g -O0
 
 base : cax.c ai.c
 	$(CC) $(CFLAGS) cax.c -o cax.out
