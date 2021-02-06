@@ -21,3 +21,4 @@ function git_branch {
 
 autoload -U colors && colors
 PS1="%n@%m %1~%{$fg[yellow]%}$(git_branch)%{$reset_color%} %# "
+alias dockerps='docker ps -a --format "table {{.Ports}}\t{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
