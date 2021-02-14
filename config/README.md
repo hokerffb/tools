@@ -1,12 +1,14 @@
 # 配置文件
 
-## Linux: Ubuntu 18.04/WSL
+## Linux: Ubuntu 18.04/WSL/Debian 10
 
 |配置文件|路径|
 :-|:-|
-|vimrc.local|/etc/|
-|proxychains.conf|/etc/|
-|gitconfig|~/.gitconfig|
+| vimrc.local | /etc/ |
+| proxychains.conf | /etc/ |
+| gitconfig | ~/.gitconfig |
+| user-dirs.dirs | ~/.config |
+| interfaces.*dh*cp* | /etc/network/interfaces |
 
 ## MacOS 10.15
 
