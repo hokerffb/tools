@@ -4,6 +4,8 @@ output
 data
 .idea
 .DS_Store
+*.out
+*.dSYM
 
 # Packages
 *.egg

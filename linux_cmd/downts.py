@@ -21,7 +21,7 @@ def remerge():
         cmd = "cat " + tsname + ">>merge.ts"
         os.system(cmd)
     ts2mp4()
-    print 'Done.'
+    print('Done.')
 
 
 def genscript(url_list_file):
@@ -36,15 +36,37 @@ def genscript(url_list_file):
             i = i + 1
             w.write('wget ' + url + ' -O ' + str(i) + '.ts\n')
     w.close()
-    print "Done."
+    print("Done.")
+
+
+def down_m3u8(url):
+    pos = url.rfind('/')
+    m3u8 = url[pos + 1:]
+    endpoint = url[:pos]
+    os.system("wget %s -O %s" % (url, m3u8))
+    os.system("cat %s|grep ts > tslist.tmp" % (m3u8))
+    w = open('down.sh', 'w')
+    with open('tslist.tmp', 'r') as f:
+        i = 0
+        for line in f.readlines():
+            ts = line.strip()
+            if ts == "":
+                continue
+            i = i + 1
+            row = 'wget %s/%s -O %d.ts\n' % (endpoint, ts, i)
+            w.write(row)
+    w.close()
+    os.system('rm tslist.tmp;ls -l;')
 
 
 def show_usage():
-    print 'Download all ts files in url_list_file and merge to mp4 file.\n'
-    print 'usage:\n\tdownts [option] <url_file_name>\n'
-    print 'option:\n'
-    print '\t--remerge : remerge all ts files in current directory.\n'
-    print '\t--script <url_file_name>: generate download bash script file.\n'
+    print('Download all ts files in url_list_file and merge to mp4 file.\n')
+    print('usage:\n\tdownts [option] <url_file_name>\n')
+    print('option:\n')
+    print('\t--remerge : remerge all ts files in current directory.\n')
+    print('\t--script <url_file_name>: generate download bash script file.\n')
+    print('\t--m3u8 <m3u8_url>: down m3u8 and generate down script.\n')
+    print('\n\tdownts <url_file_name.m3u8>\n')
 
 
 def main(url_list_file):
@@ -63,7 +85,7 @@ def main(url_list_file):
             cmd = "cat " + tsname + ">>merge.ts"
             os.system(cmd)
     ts2mp4()
-    print "Done."
+    print("Done.")
 
 
 # downts --remerge
@@ -81,6 +103,12 @@ if __name__ == "__main__":
         os.sys.exit(0)
     elif os.sys.argv[1] == '--remerge' or os.sys.argv[1] == '-r':
         remerge()
+        os.sys.exit(0)
+    elif os.sys.argv[1] == '--m3u8':
+        down_m3u8(os.sys.argv[2])
+        os.sys.exit(0)
+    elif os.sys.argv[1][-5:] == '.m3u8':
+        down_m3u8(os.sys.argv[1])
         os.sys.exit(0)
     else:
         main(url_list_file=os.sys.argv[1])
