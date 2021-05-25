@@ -53,7 +53,10 @@ def down_m3u8(url):
             if ts == "":
                 continue
             i = i + 1
-            row = 'wget %s/%s -O %d.ts\n' % (endpoint, ts, i)
+            if ts[:4] == 'http':
+                row = 'wget %s -O %d.ts\n' % (ts, i)
+            else:
+                row = 'wget %s/%s -O %d.ts\n' % (endpoint, ts, i)
             w.write(row)
     w.close()
     os.system('rm tslist.tmp;ls -l;')
