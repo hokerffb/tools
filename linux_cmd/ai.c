@@ -10,9 +10,11 @@ Auto Increase cmd
 Usage:
 ai [start]|[end]
 ai start [init number] [step]
+ai [this]
 $ ai start 0 1
 $ wget http://movie.net/1.mp4  land_`ai`.mp4
 $ wget http://movie.net/2.mp4  land_`ai`.mp4
+$ echo "`ai this`"
 $ ai end
 $ ls
 land_1.mp4 land_2.mp4
@@ -36,12 +38,15 @@ void show_usage(void)
     printf("Usage:\n");
     printf("\tai [start] | [end]\n");
     printf("\tai start [init number] [step]\n");
+    printf("\tai [this]|[noecho]");
     printf("\tai\n");
     printf("\tai end\n\n");
     printf("Sample:\n");
     printf("$ ai start 0 1\n");
     printf("$ wget http://movie.net/1.mp4  land_`ai`.mp4\n");
     printf("$ wget http://movie.net/2.mp4  land_`ai`.mp4\n");
+    printf("$ echo \"`ai this`\"\n");
+    printf("$ ai noecho\n");
     printf("$ ai end\n");
     printf("$ ls\n");
     printf("land_1.mp4 land_2.mp4\n");
@@ -81,12 +86,16 @@ int main(int argc, char * argv[])
             counter.counter = 0;
             counter.step = 1;
             memcpy(shm, &counter, sizeof(Counter));
-        } else if(strcmp(argv[1], "end") == 0) {
+        } else if (strcmp(argv[1], "end") == 0) {
             // ai end
             shmdt(shm);
             shmctl(shmid, IPC_RMID, 0);
+        } else if (strcmp(argv[1], "this") == 0) {
+            printf("%d", counter.counter);
+        } else if (strcmp(argv[1], "noecho") == 0) {
+            counter.counter += counter.step;
+            memcpy(shm, &counter, sizeof(Counter));
         }
-        
     }
     
     return 0;
