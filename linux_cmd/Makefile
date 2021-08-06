@@ -6,10 +6,10 @@ CFLAGS=-Wall -g -O0
 base : cax.c ai.c
 	$(CC) $(CFLAGS) cax.c -o cax.out
 	$(CC) $(CFLAGS) ai.c -o ai.out
-	$(CC) $(CFLAGS) pt.c -o pt.out
+	$(CC) $(CFLAGS) fq.c -o fq.out
 
-install: cax.out pt.out ai.out
-	@cp -f pt.out /usr/local/bin/pt
+install: cax.out fq.out ai.out
+	@cp -f fq.out /usr/local/bin/fq
 	@cp -f cax.out /usr/local/bin/cax
 	@cp -f ai.out /usr/local/bin/ai
 	@cp -f ./where.py /usr/local/bin/wherepy
@@ -23,7 +23,7 @@ install: cax.out pt.out ai.out
 
 
 uninstall:
-	@rm -f /usr/local/bin/pt
+	@rm -f /usr/local/bin/fq
 	@rm -f /usr/local/bin/cax
 	@rm -f /usr/local/bin/ai
 	@rm -f /usr/local/bin/wherepy

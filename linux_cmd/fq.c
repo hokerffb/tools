@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+    终端番茄时钟
+*/
+
 int running = 1;
 
 void OnCtrlC(int signo) 
@@ -13,14 +17,31 @@ void OnCtrlC(int signo)
     running = 0;
 }
 
+void show_help() {
+    printf("Terminal tomato timing tool.\n");
+    printf("Copyright by Toyshop Studio 2021\n\n");
+    printf("Usage:\n");
+    printf("\tfq [-t time] [audio]\n");
+    printf("\n~/Music/end.mp3 will be played by default.\n");
+}
+
 int main(int argc, char *argv[])
 {
     int TOTAL = 25 * 60;
-    printf("%d -> %s\n", argc, argv[1]);
+    char audio[512] = {0};
+    strcpy(audio, "~/Music/end.mp3");
+
+    if (argc > 1 && strcmp(argv[1], "-h")==0) {
+        show_help();
+        return 0;
+    }
     if (argc > 2 && strcmp(argv[1], "-t")==0) {
         // pt -t 1
-        printf("\t%d -> %s\n", argc, argv[2]);
+        // printf("\t%d -> %s\n", argc, argv[2]);
         TOTAL = atoi(argv[2]) * 60;
+    }
+    if (argc > 3) {
+        strcpy(audio, argv[3]);
     }
 
     time_t begin = time((time_t*)NULL);
@@ -50,7 +71,10 @@ int main(int argc, char *argv[])
     printf("\n");
     // MacOS: afplay end.mp3
     if (running) {
-        system("afplay ~/Music/end.mp3 &");
+        char cmd[512] = {0};
+        sprintf(cmd, "afplay %s &", audio);
+        printf("%s\n", cmd);
+        system(cmd);
     }
 
     return 0;
