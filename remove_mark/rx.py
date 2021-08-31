@@ -14,8 +14,9 @@ from PIL import Image
 # 
 XMIND_MARK = (0, int('0x52',16), int('0x93',16))
 XMIND_BACK = (0, int('0x5b',16), int('0xa3',16), 255)
-TOLERANCE = 15
+TOLERANCE = 15 # 容差
 
+# 约等于
 def approximate(a, b):
     if a > b - TOLERANCE and a < b + TOLERANCE:
         return True
