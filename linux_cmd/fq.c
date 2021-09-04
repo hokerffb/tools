@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     if (running) {
         char cmd[512] = {0};
         sprintf(cmd, "afplay %s &", audio);
-        printf("%s\n", cmd);
+        // printf("%s\n", cmd);
         system(cmd);
     }
 

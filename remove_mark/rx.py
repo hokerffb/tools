@@ -26,14 +26,18 @@ def approximate(a, b):
 def main(src, dest):
     img = Image.open(src)
     width, height = img.size
+    change = False
     for pos in product(range(width), range(height)):
         pix = img.getpixel(pos)[:3]
         if pix == XMIND_MARK:
             img.putpixel(pos, XMIND_BACK)
+            change = True
         if approximate(pix[1], XMIND_MARK[1]) and approximate(pix[2], XMIND_MARK[2]):
-            print(pix, XMIND_MARK, XMIND_BACK)
+            # print(pix, XMIND_MARK, XMIND_BACK)
             img.putpixel(pos, XMIND_BACK)
-    img.save(dest)
+            change = True
+    if change:
+        img.save(dest)
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
