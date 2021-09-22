@@ -18,24 +18,29 @@ void OnCtrlC(int signo)
 }
 
 void show_message() {
-    FILE *fp = NULL;
     char *home = NULL;
     char message_file[256] = {0};
-    char buf[255] = {0};
+    // FILE *fp = NULL;
+    // char buf[255] = {0};
 
     home = getenv("HOME");
     sprintf(message_file, "%s/%s", home, ".fqmessage");
+    printf("\033[字背景颜色;字体颜色m字符串\033[0m" );
 
-    fp = fopen(message_file, "r");
-    if (fp == NULL) {
-        printf("fqmessage not found\n");
-        return;
-    }
-    while( fgets(buf, sizeof(buf), fp) != NULL ) {
-        printf("%s", buf);
+    if (access(message_file, R_OK) == 0) {
+        system("echo \"$(<~/.fqmessage)\"");
     }
 
-    fclose(fp);
+    // fp = fopen(message_file, "r");
+    // if (fp == NULL) {
+    //     printf("fqmessage not found\n");
+    //     return;
+    // }
+    // while( fgets(buf, sizeof(buf), fp) != NULL ) {
+    //     printf("%s", buf);
+    // }
+
+    // fclose(fp);
 }
 
 void show_help() {
