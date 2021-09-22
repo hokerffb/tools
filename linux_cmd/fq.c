@@ -17,6 +17,27 @@ void OnCtrlC(int signo)
     running = 0;
 }
 
+void show_message() {
+    FILE *fp = NULL;
+    char *home = NULL;
+    char message_file[256] = {0};
+    char buf[255] = {0};
+
+    home = getenv("HOME");
+    sprintf(message_file, "%s/%s", home, ".fqmessage");
+
+    fp = fopen(message_file, "r");
+    if (fp == NULL) {
+        printf("fqmessage not found\n");
+        return;
+    }
+    while( fgets(buf, sizeof(buf), fp) != NULL ) {
+        printf("%s", buf);
+    }
+
+    fclose(fp);
+}
+
 void show_help() {
     printf("Terminal tomato timing tool.\n");
     printf("Copyright by Toyshop Studio 2021\n\n");
@@ -43,6 +64,8 @@ int main(int argc, char *argv[])
     if (argc > 3) {
         strcpy(audio, argv[3]);
     }
+
+    show_message();
 
     time_t begin = time((time_t*)NULL);
     time_t now = 0;
@@ -71,7 +94,7 @@ int main(int argc, char *argv[])
     printf("\n");
     // MacOS: afplay end.mp3
     if (running) {
-        char cmd[512] = {0};
+        char cmd[600] = {0};
         sprintf(cmd, "afplay %s &", audio);
         // printf("%s\n", cmd);
         system(cmd);
