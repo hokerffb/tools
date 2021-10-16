@@ -28,6 +28,10 @@ install: cax.out fq.out ai.out
 	@chmod +x /usr/local/bin/fdp
 	@cp -f ./downts.py /usr/local/bin/downts
 	@chmod +x /usr/local/bin/downts
+	@cp -f ./msgbox_macos.sh /usr/local/bin/msgbox
+	@chmod +x /usr/local/bin/msgbox
+	@cp -f ./m.sh /usr/local/bin/m
+	@chmod +x /usr/local/bin/m
 
 uninstall:
 	@rm -f /usr/local/bin/fq
