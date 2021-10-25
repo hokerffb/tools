@@ -17,6 +17,22 @@ void OnCtrlC(int signo)
     running = 0;
 }
 
+void showCurrentTime(char *msg) {
+    time_t t;
+    struct tm *ptr = NULL;
+
+    time(&t);
+    ptr = localtime(&t);
+    printf("%s %d-%d-%d %d:%d:%d\n", 
+        msg,
+        ptr->tm_year + 1900, 
+        ptr->tm_mon + 1, 
+        ptr->tm_mday,
+        ptr->tm_hour, 
+        ptr->tm_min, 
+        ptr->tm_sec);
+}
+
 void show_message() {
     char *home = NULL;
     char message_file[256] = {0};
@@ -71,6 +87,7 @@ int main(int argc, char *argv[])
     }
 
     show_message();
+    showCurrentTime("\n\nStart at ");
 
     time_t begin = time((time_t*)NULL);
     time_t now = 0;
@@ -97,6 +114,8 @@ int main(int argc, char *argv[])
     printf("\033[?25h"); // show cursor
     printf("\a");
     printf("\n");
+    showCurrentTime("\nEnd at ");
+
     // MacOS: afplay end.mp3
     if (running) {
         char cmd[600] = {0};
