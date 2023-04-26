@@ -16,6 +16,9 @@ sudo cp 00-installer-config.yaml /etc/netplan/
 wget http://www.memcd.com/conf/.bash_aliases -O ~/.bash_aliases
 source ~/.bash_aliases
 
+mkdir -p ~/.pip
+wget http://www.memcd.com/conf/pip.conf -O ~/.pip/pip.conf
+
 echo 'ff    ALL=NOPASSWD:ALL'
 sudo update-alternatives --config editor
 sudo visudo
