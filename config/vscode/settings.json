@@ -1,0 +1,126 @@
+{
+    "editor.fontSize": 16,
+    "editor.insertSpaces": true,
+    "go.addTags": {
+    
+    },
+    "go.formatTool": "goformat",
+    "[go]": {
+      "editor.tabSize": 4,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": false
+      },
+    "explorer.confirmDragAndDrop": false,
+    "go.gopath": "",
+    "git.autofetch": true,
+    "editor.minimap.showSlider": "always",
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
+    "go.useLanguageServer": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": "{{put-password-here}}"
+        }
+    ],
+    "editor.largeFileOptimizations": false,
+    "workbench.editorAssociations": {
+        "*.png": "cweijan.officeViewer",
+        "*.caj": "default",
+        "*.pdf": "cweijan.officeViewer",
+        "*.ipynb": "jupyter-notebook",
+        "*.md": "default",
+        "*.txt": "markdown",
+        "*.JPG": "imagePreview.previewEditor"
+    },
+    "python.experiments.optOutFrom": [
+        "pythonJediLSP"
+    ],
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.minimap.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.cursorBlinking": true,
+    "files.defaultLanguage": "markdown",
+    "files.associations": {
+        "[!.]": "markdown",
+        "[!.][!.]": "markdown",
+        "[!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.][!.][!.][!.][!.]": "markdown",
+        "[!.][!.][!.][!.][!.][!.][!.][!.][!.][!.]": "markdown",
+        "*.local": "bat"
+    },
+    "latex-workshop.view.pdf.viewer": "tab",
+    "git.confirmSync": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "auto-correct.dictionary": {
+        "，": ",",
+        "。": "。",
+        "、": "、"
+    },
+    "remote.SSH.connectTimeout": 30,
+    "editor.inlineSuggest.enabled": true,
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Chromium, IndentWidth: 4}",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.intelliSenseCacheSize": 64,
+    "editor.renderLineHighlight": "all",
+    "window.zoomLevel": 1,
+    "codeQL.telemetry.enableTelemetry": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "Codegeex.Privacy": true,
+    "tabnine.experimentalAutoImports": true,
+    "extensions.ignoreRecommendations": true,
+    "workbench.tree.indent": 24,
+    "editor.fontFamily": "Inconsolata,Menlo, Monaco, 'Courier New', monospace,方正宋刻本秀楷",
+    "markdown.extension.list.indentationSize": "inherit",
+    "markdown.extension.katex.macros": {},
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorCustomizations": {
+    "minimapSlider.hoverBackground":"#ffffff99",
+    "minimapSlider.background":"#c5c5c555",
+    "minimapSlider.activeBackground":"#ffffff99",
+    }
+}
