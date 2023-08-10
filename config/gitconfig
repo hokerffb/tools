@@ -1,6 +1,7 @@
 [core]
     excludesfile = ./.gitignore
     editor = vim
+    quotepath = false
 [alias]
     co = checkout
     st = status
@@ -10,6 +11,7 @@
     l = "log --graph"
     up = "fetch origin master"
     re = "rebase FETCH_HEAD"
+    list = "show --name-only"
     lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s  %C(bold blue)(%cn %cr)%Creset'
     ll = log --color --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %C(bold blue)(%cn %cr)%Creset' --no-merges --stat
     tree = log --graph --decorate
@@ -24,3 +26,7 @@
 [user]
 	name = 0xff
 	email = pengyuwei@gmail.com
+[tag]
+    sort = v:refname
+[credential]
+    helper = store
