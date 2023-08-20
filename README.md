@@ -20,6 +20,7 @@
 * cloudtesting: PaaS平台测试工具
 * gdb_httpd: PaaS平台httpd测试工具
 * httpwatch: 运行于OpenWRT的http监控软件
+* pve-tools: pve工具，例如在虚拟机内部还原快照等
 
 # envirnment
 
