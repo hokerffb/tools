@@ -8,6 +8,7 @@ alias netstat='netstat'
 alias cp='cp -i'
 alias lis='netstat -an|grep tcp|grep --color LISTEN'
 alias s='sudo netstat -antlp|grep tcp|grep LISTEN'
+alias pm="iptables -t nat -L PREROUTING"
 
 alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
