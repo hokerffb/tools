@@ -119,8 +119,10 @@
     },
     "workbench.colorTheme": "Default Dark Modern",
     "workbench.colorCustomizations": {
-    "minimapSlider.hoverBackground":"#ffffff99",
-    "minimapSlider.background":"#c5c5c555",
-    "minimapSlider.activeBackground":"#ffffff99",
+        "minimapSlider.hoverBackground":"#ffffff99",
+        "minimapSlider.background":"#c5c5c555",
+        "minimapSlider.activeBackground":"#ffffff99",
+        "editor.lineHighlightBackground": "#49b2b93d",
+        "editor.lineHighlightBorder": "#ffffff30"
     }
 }
